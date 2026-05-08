@@ -1,6 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <array>
 #include <iostream>
 
 class board {
@@ -35,17 +36,22 @@ class board {
             {W_ROOK,   W_KNIGHT, W_JUICER, W_QUEEN, W_KING, W_JUICER, W_KNIGHT, W_ROOK}
         };
 
-    void printBoard() {
-        for (int i = 0; i <= 7; i++) {
-            std::cout << "\n" << 8-i << "  ";
-            for (int j = 0; j <= 7; j++) {
-                std::cout << ' ' << readSquare(boardMatrix[i][j]);
+        void printBoard() {
+            for (int i = 0; i <= 7; i++) {
+                std::cout << "\n" << 8-i << "  ";
+                for (int j = 0; j <= 7; j++) {
+                    std::cout << ' ' << readSquare(boardMatrix[i][j]);
+                }
             }
+            std::cout << "\n\n    A B C D E F G H"; 
         }
-        std::cout << "\n\n    A B C D E F G H"; 
-    }
 
-    
+        /*La cadena de texto "e2 e4" se descompone:
+        en columna y fila de origen a destino*/
+        void movePiece() {
+
+        }
+        
     private:
         //Me devuelve el tablero como caracteres PROVISIONALMENTE    
         char readSquare(int p_sq) {
@@ -94,8 +100,28 @@ class board {
                 break;
             }
         }
+
+        std::array<int, 4> moveInput() {
+            std::string movement;
+
+            std::cout << "Indique movimiento: ";
+            std::cin >> movement;
+            
+            int origCol = movement[0];
+            int origRow = 8 - (movement[1] - 'a');
+            int destCol = movement[3];
+            int destRow = 8 - (movement[4] - 'a');
+
+            return { origCol,
+                origRow,
+                destCol,
+                destRow
+            };
+        }
+
+        
 };
 
-
+//int origCol, origRow, destCol, destRow;
 
 #endif
