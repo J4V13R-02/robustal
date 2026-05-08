@@ -48,9 +48,10 @@ class board {
 
         /*La cadena de texto "e2 e4" se descompone:
         en columna y fila de origen a destino*/
-        void movePiece() {
+        /*void makeMove() {
 
-        }
+
+        }*/
         
     private:
         //Me devuelve el tablero como caracteres PROVISIONALMENTE    
@@ -106,6 +107,8 @@ class board {
 
             std::cout << "Indique movimiento: ";
             std::cin >> movement;
+
+            //TODO gestion de errores
             
             int origCol = movement[0];
             int origRow = 8 - (movement[1] - 'a');
