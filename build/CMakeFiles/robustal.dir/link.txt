@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/robustal.dir/link.d CMakeFiles/robustal.dir/src/board.cpp.o CMakeFiles/robustal.dir/src/main.cpp.o -o robustal

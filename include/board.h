@@ -102,7 +102,7 @@ class board {
             }
         }
 
-        std::array<int, 4> moveInput() {
+        std::array<int, 4> parseMove() {
             std::string movement;
 
             std::cout << "Indique movimiento: ";
@@ -110,16 +110,13 @@ class board {
 
             //TODO gestion de errores
             
-            int origCol = movement[0];
-            int origRow = 8 - (movement[1] - 'a');
-            int destCol = movement[3];
-            int destRow = 8 - (movement[4] - 'a');
+            int fromCol = movement[0];
+            int fromRow = 8 - (movement[1] - 'a');
+            int toCol = movement[3];
+            int toRow = 8 - (movement[4] - 'a');
 
-            return { origCol,
-                origRow,
-                destCol,
-                destRow
-            };
+            return move { fromCol,
+                          fromRow};
         }
 
         
