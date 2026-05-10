@@ -1,3 +1,0 @@
-/codigo/robustal/build/CMakeFiles/robustal.dir
-/codigo/robustal/build/CMakeFiles/edit_cache.dir
-/codigo/robustal/build/CMakeFiles/rebuild_cache.dir
