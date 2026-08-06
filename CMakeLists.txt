@@ -1,14 +1,7 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 4.2)
 project(robustal)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD 20)
 
-# Para que clangd pueda leer el compile_commands.json
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-include_directories(include)
-
-file(GLOB_RECURSE SOURCES "src/*.cpp")
-
-add_executable(robustal ${SOURCES})
+add_executable(robustal main.cpp
+        robustal.cpp)
